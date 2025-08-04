@@ -24,6 +24,9 @@
           display: flex;
           align-items: center;
         }
+        .searchInput:focus{
+            outline: none;
+        }
     </style>
   </head>
   <body>
@@ -59,7 +62,7 @@
               
             <i class=" fa-regular fa-flag flag text-3xl  hover:opacity-70 cursor-pointer transition hover:scale-110 "></i>
             <button class="toggle    ">
-                  <i class="right-10 absolute  fa-solid fa-sun text-2xl"></i>       
+                  <i class="right-10 top-5 absolute  fa-solid fa-sun text-2xl"></i>       
             </button>
           </div>
     </header>
@@ -71,16 +74,16 @@
       </div>
     
     <form class=" mx-auto  flex flex-col justify-center items-center">   
-        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only  dark:text-white">Search</label>
         <div class="relative w-3xs  " id="searchDiv">
             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg fill="currentColor" viewBox="0 0 512 512" class="w-4 h-4 dark:text-[black]"><path d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path></svg>
+            <svg fill="currentColor" viewBox="0 0 512 512" class="w-4 h-4 dark:text-[white]"><path d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path></svg>
             </div>
-            <input type="search" id="default-search" class=" searchInput block w-full p-2 ps-10 text-sm text-gray-300 border border-[white]  rounded-lg bg-gray-50  focus:border-[white]  dark:bg-white-700 dark:placeholder-gray-400 dark:text-black dark:focus:outline-none  dark:focus:ring-0  " placeholder="Search..." required />
+            <input type="search" id="default-search" class=" searchInput block w-full p-2 ps-10 text-sm  border border-[white]  rounded-lg bg-gray-50    focus:outline-0  text-black dark:bg-white-700 dark:placeholder-gray-400 dark:text-white   dark:focus:ring-0 dark:bg-gray-700 dark:border-0  " placeholder="Search..." required />
         </div>
         <div class="btns flex  gap-[30px] py-[30px] " >
             <button type="button" id="haveLook" class="w-[170px]  focus:outline-none text-white cursor-pointer uppercase   focus:ring-purple-300 font-medium rounded-md text-sm px-5 py-2.5 mb-2 bg-violet-500 hover:bg-violet-600 focus:ring-0 dark:bg-violet-500 dark:hover:bg-violet-600 dark:focus:ring-0">have a look</button>
-            <button  type="button" id="searchBtn" class=" w-[170px]  focus:outline-none text-white cursor-pointer uppercase   focus:ring-purple-300 font-medium rounded-md text-sm  py-[15px] px-5  mb-2 bg-black hover:bg-gray-800 focus:ring-0 dark:bg-black  dark:bg-gray-900 dark:hover:bg-gray-950 dark:hover:bg-gray-800 dark:focus:ring-0">search</button>
+            <button  type="button" id="searchBtn" class=" w-[170px]  focus:outline-none text-white cursor-pointer uppercase   focus:ring-purple-300 font-medium rounded-md text-sm  py-[15px] px-5  mb-2 bg-black hover:bg-gray-800 focus:ring-0  dark:bg-gray-900 dark:hover:bg-gray-950 dark:focus:ring-0">search</button>
         </div>
     </form>
 

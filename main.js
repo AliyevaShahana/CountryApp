@@ -90,7 +90,7 @@ continents.forEach((continent) => {
 
     selReg = continent.textContent;
     updateCards();
-    random(filtered);
+    random(filterData());
 
     allContinent.classList.remove("underline-violet");
     continents.forEach((item) => item.classList.remove("underline-violet"));
@@ -111,7 +111,7 @@ allContinent.addEventListener("click", () => {
   allContinent.classList.add("underline-violet");
 
   updateCards();
-  random(filtered);
+  random(filterData());
 });
 
 searchInput.addEventListener("input", updateCards);
@@ -123,14 +123,14 @@ searchBtn.addEventListener("click", () => {
 function searchFlag() {}
 searchFlag();
 
-let filtered = data.filter((item) => !selReg || item.region === selReg);
+
 
 function random(data) {
   let ran = Math.floor(Math.random() * data.length);
 
   randomFlag.innerHTML = ` <img  class=" object-cover rounded w-[500px]" src="${data[ran].flag}" alt="">
               <div onclick="details('${data[ran].alpha3Code}')" class="cursor-pointer w-md p-6 space-y-2 lg:col-span-5 shadow-xl border-b-[2px]  md:border-0 text-black bg-gray-200 dark:text-white dark:bg-gray-900">
-                <h3 class="text-4xl font-semibold">${data[ran].name}</h3>
+                <h3 class="text-4xl font-semibold hover:underline">${data[ran].name}</h3>
                 <p class="underline text-violet-500 font-bold">${data[ran].region}</p>
                 <h4>Capital: ${data[ran].capital}</h4>
                 <h4>Area: ${data[ran].area}  km2</h4>
@@ -138,10 +138,10 @@ function random(data) {
               </div>
     `;
 }
-random(filtered);
+random(filterData());
 
 flag.addEventListener("click", () => {
-  random(filtered);
+  random(filterData());
 });
 
 haveLookBtn.addEventListener("click", () => {
