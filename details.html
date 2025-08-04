@@ -1,37 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" >
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+        <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script defer src="./data.js"></script>
-    <script defer src="./main.js"></script>
-    <link rel="stylesheet" href="output.css">
-
-
-    <style>
-        .underline-violet{
-        border-bottom-width: 2px;
-        border-bottom-color: #8b5cf6; 
-        color: #8b5cf6;
-        }
-        .flag{
-          display: flex;
-          align-items: center;
-        }
-    </style>
-  </head>
-  <body>
-    <header class="fixed z-99 w-full bg-[#fff] h-18 text-black dark:bg-[#111827] dark:text-gray-300">
+    <script defer src="./details.js"></script>
+</head>
+<body>
+     <header class="flex items-center w-full bg-[#fff] h-18  dark:bg-white-100 dark:text-gray-800">
+            <img onclick="back()" class="ms-10 flag w-[40px] hover:opacity-70 cursor-pointer transition hover:scale-110" src="https://site-assets.fontawesome.com/releases/v7.0.0/svgs-full/thin/outdent.svg">
+         <h1>Back</h1>
           <div class="container flex justify-between  mx-auto md:justify-center md:space-x-8">
             <ul class=" items-stretch hidden space-x-3 md:flex ">
               <li  class="flex ">
-                <a  rel="noopener noreferrer" href="#"  id="continent" class=" flex items-center px-4 -mb-1 border-b-2  dark:border- border-gray-200">Europe</a>
+                <a  rel="noopener noreferrer" href="#"  id="continent" class=" flex items-center px-4 -mb-1 border-b-2 dark:border- border-gray-200">Europe</a>
               </li>
               <li  class="flex">
                 <a rel="noopener noreferrer" href="#" id="continent"  class="flex items-center px-4 -mb-1 border-b-2 dark:border- border-gray-200">Asia</a>
@@ -56,44 +43,16 @@
                 <a rel="noopener noreferrer" href="#" id="continent"  class="flex items-center px-4 -mb-1 border-b-2 dark:border- border-gray-200 ">Antarctic</a>
               </li>
             </ul>
-              
-            <i class=" fa-regular fa-flag flag text-3xl  hover:opacity-70 cursor-pointer transition hover:scale-110 "></i>
-            <button class="toggle    ">
-                  <i class="right-10 absolute  fa-solid fa-sun text-2xl"></i>       
+            <button title="Button" type="button" class="p-4 md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 dark:text-gray-800">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
             </button>
           </div>
     </header>
-
-  <article class="flex flex-col px-6  mx-auto py-[100px] bg-gray-200 dark:bg-gray-800 dark:text-gray-900">
-      <div class="heading w-full mx-auto space-y-4 text-center">
-        <h1 class="text-4xl font-bold leading-tight md:text-5xl text-black dark:text-white">Welcome to CountryApp Website</h1>
-            <p class="text-3xl font-bold leading-tight my-[30px]  text-violet-500  ">You can find data of any country in this website.</p>
-      </div>
     
-    <form class=" mx-auto  flex flex-col justify-center items-center">   
-        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-        <div class="relative w-3xs  " id="searchDiv">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg fill="currentColor" viewBox="0 0 512 512" class="w-4 h-4 dark:text-[black]"><path d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path></svg>
-            </div>
-            <input type="search" id="default-search" class=" searchInput block w-full p-2 ps-10 text-sm text-gray-300 border border-[white]  rounded-lg bg-gray-50  focus:border-[white]  dark:bg-white-700 dark:placeholder-gray-400 dark:text-black dark:focus:outline-none  dark:focus:ring-0  " placeholder="Search..." required />
-        </div>
-        <div class="btns flex  gap-[30px] py-[30px] " >
-            <button type="button" id="haveLook" class="w-[170px]  focus:outline-none text-white cursor-pointer uppercase   focus:ring-purple-300 font-medium rounded-md text-sm px-5 py-2.5 mb-2 bg-violet-500 hover:bg-violet-600 focus:ring-0 dark:bg-violet-500 dark:hover:bg-violet-600 dark:focus:ring-0">have a look</button>
-            <button  type="button" id="searchBtn" class=" w-[170px]  focus:outline-none text-white cursor-pointer uppercase   focus:ring-purple-300 font-medium rounded-md text-sm  py-[15px] px-5  mb-2 bg-black hover:bg-gray-800 focus:ring-0 dark:bg-black  dark:bg-gray-900 dark:hover:bg-gray-950 dark:hover:bg-gray-800 dark:focus:ring-0">search</button>
-        </div>
-    </form>
-
-    <section id="flagBig"  class="p-10 mb-[60px] ">
-       <div class="flex justify-center gap-4  randomFlag h-80"></div>
-    </section>
-
-	<div class="cards container mx-auto flex flex-wrap gap-4 justify-center"> </div>
-
-    <div class="flex justify-center showBtn">
-        <button  type="button" id="searchBtn" class="mt-15 w-[170px]  focus:outline-none text-white cursor-pointer  py-[15px] px-5 font-medium rounded-md text-sm   mb-2 bg-black hover:bg-gray-800 focus:ring-0 dark:bg-gray-900 dark:hover:bg-gray-950  dark:focus:ring-0 uppercase">Show More </button>
-    </div>
-
-   </article>
-  </body>
+   <div class="cards flex my-10 justify-center ">
+   
+   </div>
+</body>
 </html>
